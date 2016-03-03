@@ -29,8 +29,31 @@ get_header(); // Подключаем хедер?>
 </div>
 </div>
 <div class="container cont3 clearfix">
+	<div class="katalog">
+		<?php $query = new WP_Query( array( 'category__in', '2' ) ); ?>
+		<h3><a href="<?php echo get_category_link(2); ?>">Эко продукты</a></h3>
+		<ul class="bxslider">
+			<?php while ( $query->have_posts()) : $query->the_post(); ?>
+				<li>
+					<div id="txtmin"><?php the_title();?></div>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(600,500));?>
+				</a>
+				</li>
+			
+		<?php endwhile; ?>
+		</ul>
+		<h3><a href="<?php echo get_category_link(2); ?>">Посмотреть все продукты</a></h3>
 	
 </div>
+	
+</div>
+<div class="container cont4 clearfix">
+	<div class="obl">
+		<img src="<?php echo get_template_directory_uri()?>/img/obl1.png" alt="" id="obl1">
+		<img src="<?php echo get_template_directory_uri()?>/img/obl2.png" alt="" id="obl2">
+	</div>
+</div>
+
 
 <?php get_sidebar(); // Подключаем сайдбар ?>
 <?php get_footer(); // Подключаем футер ?>
