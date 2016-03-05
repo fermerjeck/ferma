@@ -46,13 +46,13 @@ function register_mystyle()
     function segment_more($more) {
     return '...';
     }
-    function segment_lengthtow ($lengt) {
+    function segment_length($lengt) {
     return 6;
     }
 
     function announcement($length, $more='') {
        global $post;
-       add_filter('excerpt_length', $length_);
+       add_filter('excerpt_length', $length);
        add_filter('excerpt_more', $more);
          $output = get_the_excerpt();
          $output = apply_filters('wptexturize', $output);

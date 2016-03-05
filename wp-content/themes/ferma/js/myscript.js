@@ -8,8 +8,6 @@ jQuery(document).ready(function($) {
   $(window).resize( setHeiHeight ); // обновляем при изменении размеров окна
 
 /*Конец высоты*/
-/*фото...*/
-$('img').addClass('responsive-img');
 /*Текст к картинкам контакты*/
 
 	var tit = $('.hidetxt').text();
@@ -34,6 +32,9 @@ $('img').addClass('responsive-img');
 
   });
   /*Облока*/
+  if( par > $('.cont3').offset().top){
+  	console.log("hi");
+  }
   $("#obl1").css({
   	"left" :"" + par /60 + "%",
   	});
@@ -41,7 +42,7 @@ $('img').addClass('responsive-img');
   	"right" :"" + par /60 + "%",
   	});
   
-  if ($(this).scrollTop() > 400) {
+  if ($(this).scrollTop() > 300) {
           $('.fotoin').css('visibility', 'visible').addClass('animated bounceInLeft');
           $('.textunber').css('visibility', 'visible').addClass('animated bounceInRight');
           $('.foto h3').css('visibility', 'visible').addClass('animated bounceInUp');
@@ -51,10 +52,10 @@ $('img').addClass('responsive-img');
   /*Слайдер*/
   
     $('.bxslider').bxSlider({
-		  minSlides: 4,
+		   minSlides: 4,
     	  maxSlides: 4,
-    	  slideWidth: 800,
-    	  slideMargin: 10,
+    	  slideWidth: 600,
+    	  slideMargin: 5,
     	  ticker: true,
     	  speed: 49000
 

@@ -30,21 +30,24 @@ get_header(); // Подключаем хедер?>
 </div>
 <div class="container cont3 clearfix">
 	<div class="katalog">
-		<?php $query = new WP_Query( array( 'category__in', '2' ) ); ?>
+		<?php $query = new WP_Query( 'category__in=2' ); ?>
 		<h3><a href="<?php echo get_category_link(2); ?>">Эко продукты</a></h3>
 		<ul class="bxslider">
 			<?php while ( $query->have_posts()) : $query->the_post(); ?>
 				<li>
-					<div id="txtmin"><?php the_title();?></div>
-				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(600,500));?>
+					<div class="txtmin"><?php the_title();?></div>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(500,300));?>
 				</a>
 				</li>
 			
 		<?php endwhile; ?>
+		<?php wp_reset_postdata();?>
+
+
 		</ul>
 		<h3><a href="<?php echo get_category_link(2); ?>">Посмотреть все продукты</a></h3>
 	
-</div>
+	</div>
 	
 </div>
 <div class="container cont4 clearfix">
@@ -52,6 +55,36 @@ get_header(); // Подключаем хедер?>
 		<img src="<?php echo get_template_directory_uri()?>/img/obl1.png" alt="" id="obl1">
 		<img src="<?php echo get_template_directory_uri()?>/img/obl2.png" alt="" id="obl2">
 	</div>
+
+	<div class="katalog">
+		<?php $query = new WP_Query( 'category__in=3' ); ?>
+		
+			<?php while ( $query->have_posts()) : $query->the_post(); ?>
+				<div class="sec4">
+				<h2><a href="<?php the_permalink()?>"><?php the_title(); ?></a> </h2>
+				<br/>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(80,70));?></a>
+					<?php
+						announcement('segment_length','segment_more'); 
+					?>
+					<a href="<?php the_permalink(); ?>">
+					<br/>
+					<div class="more">
+					<i class="fa fa-hand-o-right"></i> 
+					<span class="more">Читать полностью »</span>
+					</div>
+				</a>
+				</div>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata();?>
+
+		<h3><a href="<?php echo get_category_link(3); ?>">Посмотреть все продукты</a></h3>
+	
+	</div>
+ 
+</div>
+
+<div class="container cont5 clearfix">
 </div>
 
 
