@@ -38,10 +38,10 @@ function register_mystyle()
     add_action('wp_enqueue_scripts', 'register_mystyle');
 
     function register_animate()
- 	{
+  {
      wp_enqueue_style( 'my-animate', get_stylesheet_directory_uri().'/css/animate.css');
     }
-    add_action('wp_enqueue_scripts', 'register_animate');
+    add_action('wp_enqueue_scripts', 'register_animate');  
 
     function segment_more($more) {
     return '...';
