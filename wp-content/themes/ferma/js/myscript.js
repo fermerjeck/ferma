@@ -32,11 +32,24 @@ jQuery(document).ready(function($) {
 
   });
   /*Облока*/
-  if( par > $('.cont3').offset().top){
-  	console.log("hi");
+  var cont4 = $('.cont4').offset().top - par;
+  var cont5 = $('.cont5').offset().top - par;
+  console.log(cont4);
+  if( cont4 < 50){
+    
+  	$('.gusi').css('visibility', 'visible').addClass('animated bounceInLeft');
+    
   }
+    if( cont5 < 50){
+    
+    $('.pavlin').css('visibility', 'visible').addClass('animated bounceInRight');
+    
+  }
+  var i = $('.cont4').offset().top - par;
   $("#obl1").css({
-  	"left" :"" + par /60 + "%",
+  	 "transform" :"translate3d(" + i / 2 + "%," + i/8  + "%, 0px)",
+    "-webkit-transform" : "translate3d(" + i / 2 + "%, " + i/8  +  "%, .0px)",
+    "-moz-transform" : "translate3d(" + i / 2 + "%, "+ i/8  +"%, 0px)"
   	});
    $("#obl2").css({
   	"right" :"" + par /60 + "%",

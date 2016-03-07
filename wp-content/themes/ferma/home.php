@@ -6,20 +6,23 @@
  * @subpackage fermerjeck
  */
 get_header(); // Подключаем хедер?> 
-<section class="container cont1 clearfix">
+<div class="container cont1 clearfix">
 	<img src="<?php echo get_template_directory_uri()?>/img/logo.png" alt="Эко ферма" id="logo">
-</section>
-<section class="container cont2 clearfix">
+</div>
+<div class="container cont2 clearfix">
 	<?php get_template_part('inc/about');?>
-</section>
-<section class="container cont3 clearfix">
+</div>
+<div class="container cont3 clearfix">
 	<?php get_template_part('inc/katalog');?>
-</section>
-<section class="container cont4 clearfix">
+</div>
+<div class="container cont4 clearfix">
 	<?php get_template_part('inc/gusi');?>
-</section>
+</div>
 
-<section class="container cont5 clearfix">
-</section>
+<div class="container cont5 clearfix">
+	<?php get_template_part('inc/pavlin');?>
+</div>
+<div class="container cont6 clearfix">
+</div>
 <?php get_sidebar(); // Подключаем сайдбар ?>
 <?php get_footer(); // Подключаем футер ?>
